@@ -77,7 +77,11 @@ cp -r ~/Ricing/Wallpapers ~/Pictures/
 # mango open
 mango
 
+sleep 5
+
 # wal 1st setup
 wal -i ~/Pictures/Wallpapers/NVDAS.png --cols16 dual
+
+sleep 3
 
 killall mango
