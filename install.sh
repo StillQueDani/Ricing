@@ -20,9 +20,11 @@ packages_pacman=(
   base-devel
   fastfetch
   python
+  # FONTS
+  ttf-googlesanscode-nerd
 )
 
-for package in ${packages_pacmano[@]}; do
+for package in ${packages_pacman[@]}; do
   sudo pacman -S --noconfirm ${package}
 done
 
@@ -43,4 +45,15 @@ for package in ${packages_yay[@]}; do
 done
 # Create Directories
 
+config_directories=(
+  mango
+  hypr
+  kitty
+  rofi
+  kanata
+)
+
+for directories in "${config_directories[@]}"; do
+  mkdir -p ~/.config/"${directories}"
+done
 # Copy Config Files
