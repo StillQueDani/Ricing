@@ -74,6 +74,10 @@ done
 mkdir -p ~/Pictures
 cp -r ~/Ricing/Wallpapers ~/Pictures/
 
-# wal 1st setup
+# mango open
+mango
 
+# wal 1st setup
 wal -i ~/Pictures/Wallpapers/NVDAS.png --cols16 dual
+
+killall mango
