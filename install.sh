@@ -22,6 +22,7 @@ packages_pacman=(
   python
   awww
   zsh
+  starship
   # FONTS
   ttf-googlesanscode-nerd
 )
@@ -63,6 +64,10 @@ cp -r ~/Ricing/Wallpapers ~/Pictures/
 # wal 1st setup
 wal -i ~/Pictures/Wallpapers/NVDAS.png --cols16 dual
 
-cp ~/Ricing/.zshrc ~
+# Shell setup
 
+cp ~/Ricing/.zshrc ~
 chsh -s /usr/bin/zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+cp ~/Ricing/starship.toml ~/.config
