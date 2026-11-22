@@ -1,0 +1,14 @@
+configuration {
+    display-drun: "Apliccations";
+    display-window: "Windows: ";
+    drun-display-format: "{icon} {name}";
+    font: "JetBrainsMono Nerd Font 10";
+    show-icons: true;
+    icon-theme: "Papirus";
+  }
+
+  window {
+      width: 45%;
+    }
+
+@theme "~/.cache/wal/colors-rofi-dark.rasi"

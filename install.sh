@@ -68,3 +68,12 @@ for dir_c in "$cdir"/*/; do
   [ -d "$dir_c" ] || continue
   cp -a "$dir_c" "$HOME/.config/"
 done
+
+# Copy Wallpapers
+
+mkdir -p ~/Pictures
+cp -r ~/Ricing/Wallpapers ~/Pictures/
+
+# wal 1st setup
+
+wal -i ~/Pictures/Wallpapers/NVDAS.png --cols16 dual
