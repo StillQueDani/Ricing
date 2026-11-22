@@ -21,12 +21,13 @@ packages_pacman=(
   fastfetch
   python
   awww
+  zsh
   # FONTS
   ttf-googlesanscode-nerd
 )
 
-for package in ${packages_pacman[@]}; do
-  sudo pacman -S --noconfirm ${package}
+for package in "${packages_pacman[@]}"; do
+  sudo pacman -S --noconfirm "${package}"
 done
 
 sudo pacman -S --needed --noconfirm
@@ -41,24 +42,9 @@ packages_yay=(
   python-pywal16
 )
 
-for package in ${packages_yay[@]}; do
-  yay -S --noconfirm ${package}
+for package in "${packages_yay[@]}"; do
+  yay -S --noconfirm "${package}"
 done
-
-# Create Directories
-
-# config_directories=(
-#   mango
-#   hypr
-#   kitty
-#   rofi
-#   kanata
-#   wal
-# )
-#
-# for directories in "${config_directories[@]}"; do
-#   mkdir -p ~/.config/"${directories}"
-# done
 
 # Copy Config Files
 
@@ -74,14 +60,9 @@ done
 mkdir -p ~/Pictures
 cp -r ~/Ricing/Wallpapers ~/Pictures/
 
-# mango open
-mango
-
-sleep 5
-
 # wal 1st setup
 wal -i ~/Pictures/Wallpapers/NVDAS.png --cols16 dual
 
-sleep 3
+cp ~/Ricing/.zshrc ~
 
-killall mango
+chsh -s /usr/bin/zsh
