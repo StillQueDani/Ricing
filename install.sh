@@ -5,7 +5,7 @@
 cd
 
 echo "Getting packages"
-sleep 3
+sleep 1
 
 packages_pacman=(
   btop
@@ -20,6 +20,7 @@ packages_pacman=(
   base-devel
   fastfetch
   python
+  awww
   # FONTS
   ttf-googlesanscode-nerd
 )
@@ -43,17 +44,26 @@ packages_yay=(
 for package in ${packages_yay[@]}; do
   yay -S --noconfirm ${package}
 done
+
 # Create Directories
 
-config_directories=(
-  mango
-  hypr
-  kitty
-  rofi
-  kanata
-)
+# config_directories=(
+#   mango
+#   hypr
+#   kitty
+#   rofi
+#   kanata
+#   wal
+# )
+#
+# for directories in "${config_directories[@]}"; do
+#   mkdir -p ~/.config/"${directories}"
+# done
 
-for directories in "${config_directories[@]}"; do
-  mkdir -p ~/.config/"${directories}"
-done
 # Copy Config Files
+
+cdir=~/Ricing/dotfiles
+
+for dir_c in ${cdir}; do
+  cp -r ~/Ricing/dotfiles/"${dir_c}" ~/.config
+done
