@@ -62,8 +62,9 @@ done
 
 # Copy Config Files
 
-cdir=~/Ricing/dotfiles
+cdir="$HOME/Ricing/dotfiles"
 
-for dir_c in ${cdir}; do
-  cp -r ~/Ricing/dotfiles/"${dir_c}" ~/.config
+for dir_c in "$cdir"/*/; do
+  [ -d "$dir_c" ] || continue
+  cp -a "$dir_c" "$HOME/.config/"
 done
